@@ -1,0 +1,6 @@
+.TH _PRINTF "1" "11 November 2022" "0x11" "_printf man page"
+.SH NOMBRE
+_printf - function that produces results according to a format
+.SH SYNOPSIS
+.B printf FORMAT [ARGUMENT]....
+
