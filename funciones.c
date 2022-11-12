@@ -59,9 +59,7 @@ int funcion_i(va_list c)
         _putchar('-');
         m=1;
     }
-    else
-
-        str=convert(n,10);
+    str=convert(n,10);
     
     for(i=0;str[i]!='\0';i++)
     {
