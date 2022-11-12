@@ -4,7 +4,7 @@
 int _printf(const char *format, ...)
 {
 va_list arg;
-	functions funciones[]={{'c',funcion_c},{'s',funcion_s},{'\0',NULL}};
+	functions funciones[]={{'c',funcion_c},{'s',funcion_s},{'d',funcion_i},{'i',funcion_i},{'\0',NULL}};
 	int i, j, leng1, leng2;
 	void (*p)(char);
 
