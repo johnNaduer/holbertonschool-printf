@@ -2,22 +2,31 @@
 #include <unistd.h>
 #include "main.h"
 #include <stdarg.h>
-
+/**
+ * convert - function that converts integers into character strings.
+ * @num: input unsigned int.
+ * @base: input integer.
+ * Return: character string.
+ */
 char *convert(unsigned int num, int base)
 {
-	static char representation[] = "0123456789ABCDEF";
-	static char buffer[50];
+	static char _represent[] = "0123456789ABCDEF";
+	static char _buffer[50];
 	char *ptr;
 
-	ptr = &buffer[49];
+	ptr = &_buffer[49];
 	*ptr = '\0';
 	do {
-	*--ptr = representation[num % base];
+	*--ptr = _represent[num % base];
 	num /= base;
 	} while (num != 0);
 	return (ptr);
 }
-
+/**
+ * funcion_i - function that prints the integer numbers
+ * @c: input va_list
+ * Return: the entire number of characters
+ */
 int funcion_i(va_list c)
 {
 	int i, n, m;

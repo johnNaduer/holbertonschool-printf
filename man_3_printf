@@ -1,6 +1,65 @@
-.TH _PRINTF "1" "11 November 2022" "0x11" "_printf man page"
+.TH _PRINTF "3" "11 November 2022" "0x11" "_printf man page"
 .SH NOMBRE
 _printf - function that produces results according to a format
 .SH SYNOPSIS
-.B printf FORMAT [ARGUMENT]....
+.nf
+
+.B #include <stdio.h>
+.B #include <stdarg.h>
+.PP
+.BI "int _printf(const char *format, ...);"
+.BI "void imprimir(char c);"
+.BI "int funcion_c(va_list c);"
+.BI "int funcion_s(va_list c);"
+.BI "char *convert(unsigned int num, int base);"
+.BI "int funcion_i(va_list c);"
+.BI "int funcion_p(va_list c __attribute__((unused)));"
+
+.B #include <unistd.h>
+
+.BI "int _putchar(char c);"
+
+.SH DESCRIPTION
+
+.BR _printf ()
+
+The printf function writes output under the control of a format string that specifies how subsequent arguments are converted to output.
+.PP
+
+.SH Format of the format string
+
+Each conversion specification is introduced by the character %, and ends with a conversion specifier.  In between there may be (in this order) zero or more flags, an optional minimum field width, an optional precision and an optional length modifier.
+
+.BI "The overall syntax of a conversion specification is:"
+
+%[marks][width][.precision][size]type
+
+.BI Conversion specifiers
+
+.SH OPTIONS
+
+.IP "d, i"
+The int argument is converted to signed decimal notation.
+The precision, if any, gives the minimum number of digits
+that must appear; if the converted value requires fewer
+digits, it is padded on the left with zeros.  The default
+precision is 1.  When 0 is printed with an explicit
+precision 0, the output is empty.
+
+.IP "c"
+This option will be used to be able to print the characters, when using the _printf specify the character width,a single byte character is specified.
+
+.IP "s"
+When _printf is used, specifies a single byte character string or multibyte, specifies a wide character string. Characters are displayed until the first null character or until the precision value is reached.
+
+.IP "%"
+A '%' is written.  No argument is converted.  The complete conversion specification is '%%'.
+
+.SH AUTHORS
+
+Written  by John Naduer Espino Yaros
+
+
+
+
 

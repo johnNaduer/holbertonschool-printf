@@ -1,19 +1,31 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdarg.h>
+/**
+ * _printf - function that produces output according to a format
+ * @format: A character with the desired format.
+ * Return: return of the number of characters of the function
+ */
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	functions funciones[] = {{'c', funcion_c}, {'s', funcion_s}, {'d', funcion_i}, {'i', funcion_i}, {'%',funcion_p}, {'\0',NULL}};
+	functions funciones[] = {
+		{'c', funcion_c},
+		{'s', funcion_s},
+		{'d', funcion_i},
+		{'i', funcion_i},
+		{'%', funcion_p},
+		{'\0', NULL}
+	};
 
 	int i, j, leng1, leng2;
 
 	void (*p)(char);
 
-	leng2 = leng1 = 0;
+	i = leng2 = leng1 = 0;
 
 	p = &imprimir;
-	if (format == NULL)
+	if (format == NULL || !format[i+1])
 		return (-1);
 	va_start(arg, format);
 
