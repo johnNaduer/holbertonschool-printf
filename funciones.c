@@ -52,7 +52,7 @@ int funcion_s(va_list c)
 	str = va_arg(c, char*);
 	if(str == NULL)
 	{
-		str = "(nul)";
+		str = "(null)";
 	}
 	
 	for (i = 0; str[i] != '\0'; i++)
