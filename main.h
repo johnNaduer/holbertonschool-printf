@@ -11,6 +11,8 @@ int funcion_s(va_list c);
 int _putchar(char c);
 char *convert(unsigned int num, int base);
 int funcion_i(va_list c);
+int funcion_p(va_list c __attribute__((unused)));
+
 typedef struct _functions
 {
     char tipo;
