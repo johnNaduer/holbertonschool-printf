@@ -50,11 +50,11 @@ int funcion_s(va_list c)
 	int i = 0;
 
 	str = va_arg(c, char*);
-	if(str == NULL)
+	if (str == NULL)
 	{
 		str = "(null)";
 	}
-	
+
 	for (i = 0; str[i] != '\0'; i++)
 	{
 	_putchar(str[i]);
