@@ -18,14 +18,14 @@ int _printf(const char *format, ...)
 		{'\0', NULL}
 	};
 
-	int i, j, leng1, leng2;
+	int i, j, leng1, leng2,leng3;
 
 	void (*p)(char);
 
-	i = leng2 = leng1 = 0;
+	i = leng2 = leng1 = leng3 = 0;
 
 	p = &imprimir;
-	if (format == NULL || !format[i+1])
+	if (format == NULL || !format[i + 1])
 		return (-1);
 	va_start(arg, format);
 
@@ -36,9 +36,14 @@ int _printf(const char *format, ...)
 		i++;
 	for (j = 0; funciones[j].tipo != '\0'; j++)
 	{
-	if (format[i] == funciones[j].tipo)
-	leng2 += funciones[j].f(arg);
+		if (format[i] == funciones[j].tipo)
+			leng2 += funciones[j].f(arg);
 	}
+	if (format[i]!='%')
+        {
+        leng3++;
+        (*p)(format[i]);
+        }
 	}
 	else
 	{
@@ -47,5 +52,5 @@ int _printf(const char *format, ...)
 	}
 	}
 	va_end(arg);
-	return (leng1 + leng2);
+	return (leng1 + leng2 + leng3);
 }
