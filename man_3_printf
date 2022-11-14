@@ -1,4 +1,4 @@
-.TH _PRINTF "3" "11 November 2022" "0x11" "_printf man page"
+.TH _PRINTF "3" "14 November 2022" "0x11" "_printf man page"
 .SH NOMBRE
 _printf - function that produces results according to a format
 .SH SYNOPSIS
@@ -54,6 +54,34 @@ When _printf is used, specifies a single byte character string or multibyte, spe
 
 .IP "%"
 A '%' is written.  No argument is converted.  The complete conversion specification is '%%'.
+
+.SH NOTES
+The \fB_printf()\fR is a project
+\fBJohn Espino\fR,
+actual student of Software Engineering at \fBHolberton School\fR.
+.\" .PP
+
+.SH EXAMPLE
+.PP
+.in +4n
+.EX
+#include <main.h>
+#include <stdio.h>
+
+int main(void)
+
+{
+	_printf("Length:[%d, %i]\n", len, len);
+
+	_printf("Let's try to printf a simple sentence.\n");
+
+	_printf("String:[%s]\n", "I am a string !");
+
+	_printf("Negative:[%d]\n", -762534);
+}
+
+.SH SEE ALSO
+.BR printf (3),
 
 .SH AUTHORS
 
